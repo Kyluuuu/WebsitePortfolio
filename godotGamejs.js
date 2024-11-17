@@ -1,4 +1,4 @@
-import './godotGamecss.css'
+import 'godotGamecss.css'
 
 let hasLoaded = false
 
