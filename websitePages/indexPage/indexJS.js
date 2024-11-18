@@ -1,4 +1,4 @@
-import '../indexPage/indexCSS.css';
+import './indexCSS.css';
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
