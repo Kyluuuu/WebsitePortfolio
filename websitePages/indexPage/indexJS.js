@@ -1,8 +1,6 @@
-const link = document.createElement('link');
-link.rel = 'stylesheet';
-link.type = 'text/css';
-link.href = 'style.css'; 
-document.head.appendChild(link);
+import "../indexPage/indexCSS.css"
+
+
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -112,5 +110,70 @@ homeButton.addEventListener('click', (event) => {
         scrollText.classList.add('scrollAnimation');
     }, scrollAnimationDuration);
 });
+
+const lightModeButton = document.getElementById('lightModeButton');
+let lightModeOn = true;
+
+lightModeButton.addEventListener('click', toggleDarkMode);
+
+function toggleDarkMode() {
+    lightModeOn = !lightModeOn;
+
+    const title = document.querySelector('.beginTitle h1');
+    const technology = document.querySelector('.innerLeftAbout p');
+    const beginTitle2 = document.querySelector('.beginTitle h2');
+    const technology2 = document.querySelector('.Technology');
+    const scrollCSS = document.querySelector('.scroll');
+    const blackText = document.querySelectorAll('.hidden');
+    const blackBarProject = document.querySelectorAll('.allProjectsContainer');
+    const blackBarExperience = document.querySelectorAll('.allExperienceContainer');
+
+    if (lightModeOn) {
+        document.body.style.backgroundColor = 'white';
+        title.style.color = 'black'; 
+        technology.style.color = 'black';
+        beginTitle2.style.color = '#555';
+        technology2.style.color = '#555';
+        scrollCSS.style.color = 'black'; 
+        blackText.forEach(element => {
+            element.style.color = 'black';
+            element.style.borderColor = 'black';
+        })
+        blackBarProject.forEach(element => {
+            element.style.color = 'white';
+            element.style.borderColor = 'black';
+        })
+        blackBarExperience.forEach(element => {
+            element.style.color = 'black';
+            element.style.borderColor = 'black';
+        })
+    }
+    else {
+        document.body.style.backgroundColor = '#333';
+        title.style.color = 'white'; 
+        technology.style.color = 'white'
+        beginTitle2.style.color = '#999';
+        technology2.style.color = '#999';
+        scrollCSS.style.color = 'white'; 
+        blackText.forEach(element => {
+            element.style.color = 'white';
+            element.style.borderColor = 'white';
+        })
+        blackBarProject.forEach(element => {
+            element.style.color = 'white';
+            element.style.borderColor = 'white';
+        })
+        blackBarExperience.forEach(element => {
+            element.style.color = 'white';
+            element.style.borderColor = 'white';
+        })
+    }
+    
+}
+
+toggleDarkMode();
+
+
+
 
 

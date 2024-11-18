@@ -8,6 +8,11 @@
   padding: 0.5vw;
 }
 
+body {
+  background-color: #333;
+  transition: background-color 1s ease;
+}
+
 .centerNav {
   display: flex;
   justify-content: center; 
@@ -20,8 +25,7 @@
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  background-color:#555;
-
+  background-color:#555; 
   z-index: 100;
   border-radius: 1vh;
 }
@@ -48,7 +52,7 @@
 }
 
 .navBarElement:hover {
-  background-color:#f2f2f2;
+  background-color: #333;
   border-radius: 0.8vw;
   transition: all 0.5s;
   padding: 1vw;
@@ -73,10 +77,10 @@
   font-size: 7vw;
   margin-left: auto;
   max-width: 50vw;
+  transition: color 1s ease;
 }
 
 .beginTitle h2 {
-  color: rgb(180, 180, 180);
   margin-left: auto;
   max-width: 40vw;
   font-size: 2vw;
@@ -118,6 +122,10 @@ h1 {
   font-size: 1vw;
 }
 
+.innerLeftAbout p {
+  transition: color 1s ease;
+}
+
 
 .bold {
   font-weight: bold;
@@ -130,14 +138,12 @@ h1 {
   justify-content: space-between;
 }
 
-.Technology {
-  color: rgb(180, 180, 180);
-}
 
 .scroll {
   padding-bottom: 10vh;
   display: flex;
   justify-content: center;
+  transition: color 1s ease;
 }
 
 .scrollAnimation {
@@ -213,6 +219,7 @@ h1 {
 .projectContainer:hover {
   background-color: white;
   border: 0.2vw solid black;
+  color: black;
   border-radius: 0;
   transition: all 0.3s ease;
 }
@@ -225,6 +232,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 3vw;       
+  color: white;
 }
 
 .allExperienceContainer {
@@ -284,5 +292,16 @@ p {
 
 .innerLeftAbout p {
   font-size: 1vw;
+}
+
+.label {
+  width: 80px;
+  height: 80px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 

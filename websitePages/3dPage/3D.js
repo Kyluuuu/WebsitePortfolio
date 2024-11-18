@@ -1,4 +1,4 @@
-import './style.css'
+import "../indexPage/indexCSS.css"
 
 import * as THREE from 'three'
 
