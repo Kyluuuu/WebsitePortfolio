@@ -37,6 +37,7 @@ body {
   font-size: 0.8vw;
   background-color:#555;
   padding: 0;
+  margin-right: 0.4vw;
 }
 
 .leftNav {
@@ -85,8 +86,7 @@ body {
   margin-left: auto;
   max-width: 40vw;
   font-size: 2vw;
-  transition: font-size 1.5s ease;
-  transition: color 1s ease;
+  transition: font-size 1.5s ease, color 1s ease;
 }
 
 .hiddenUp {
@@ -106,14 +106,14 @@ body {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-  transition: color 1s ease;
+  transition: all 1s ease;
 }
 
 .show {
   filter: blur(0);
   transform: translateX(0);
   opacity: 1;
-  transition: transform 0.6s ease, opacity 1s ease, filter 1s ease; 
+  transition: transform 0.6s ease, opacity 1s ease, filter 1s ease, color 1s ease; 
 }
 
 
@@ -186,6 +186,7 @@ h1 {
 
 .experience {
   padding-left: 0;
+  transition: color 1s ease; 
 }
 
 
@@ -250,7 +251,7 @@ h1 {
   justify-content: center;
   gap: 3vw;       
   color: white;
-  transition: color 1s ease;
+  transition: all 1s ease, color 1s ease;
 }
 
 .allExperienceContainer {
@@ -258,7 +259,8 @@ h1 {
   padding-top: 0.8vw;
   padding-bottom: 0.8vw;
   gap: 3vw; 
-  transition: color 1s ease; 
+  transition: all 1s ease, color 1s ease;
+
 }
 
 .experienceItem {
@@ -307,6 +309,7 @@ p {
 
 .Technology p {
   font-size: 2.5vw;
+  color: #999;
   transition: color 1s ease;
 }
 
@@ -314,18 +317,18 @@ p {
   font-size: 1vw;
 }
 
-.label {
-  width: 80px;
-  height: 80px;
-  background-color: red;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ion-icon {
+  padding: 0;
 }
+
 
 .Technology {
   transition: color 1s ease;
+}
+
+.lightSwitch {
+  display: 'none';
+  padding: 0;
+  margin: 0;
 }
 

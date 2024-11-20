@@ -117,11 +117,16 @@ homeButton.addEventListener('click', (event) => {
 });
 
 const lightModeButton = document.getElementById('lightModeButton');
+const moonIcon = lightModeButton.querySelector(".moon");
+const sunnyIcon = lightModeButton.querySelector(".sunny");
 let lightModeOn = true;
+
+const lightSwitch = document.querySelector('.lightSwitch');
 
 lightModeButton.addEventListener('click', toggleDarkMode);
 
 function toggleDarkMode() {
+
     lightModeOn = !lightModeOn;
 
     const title = document.querySelector('.beginTitle h1');
@@ -134,6 +139,12 @@ function toggleDarkMode() {
     const blackBarExperience = document.querySelectorAll('.allExperienceContainer');
 
     if (lightModeOn) {
+        lightSwitch.classList.add('on')
+        lightSwitch.classList.remove('off')
+
+        moonIcon.style.display = "none";
+        sunnyIcon.style.display = "block";
+
         document.body.style.backgroundColor = 'white';
         title.style.color = 'black'; 
         technology.style.color = 'black';
@@ -146,14 +157,17 @@ function toggleDarkMode() {
         })
         blackBarProject.forEach(element => {
             element.style.color = 'white';
-            element.style.borderColor = 'black';
         })
         blackBarExperience.forEach(element => {
             element.style.color = 'black';
-            element.style.borderColor = 'black';
         })
     }
     else {
+        lightSwitch.classList.add('off')
+        lightSwitch.classList.remove('on')
+        sunnyIcon.style.display = "none";
+        moonIcon.style.display = "block";
+
         document.body.style.backgroundColor = '#333';
         title.style.color = 'white'; 
         technology.style.color = 'white'
@@ -166,11 +180,9 @@ function toggleDarkMode() {
         })
         blackBarProject.forEach(element => {
             element.style.color = 'white';
-            element.style.borderColor = 'white';
         })
         blackBarExperience.forEach(element => {
             element.style.color = 'white';
-            element.style.borderColor = 'white';
         })
     }
 }
