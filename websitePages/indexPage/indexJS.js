@@ -1,4 +1,4 @@
-import './indexCSS.css';
+import "./indexCSS.css";
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -13,6 +13,13 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el))
+
+window.addEventListener('load', () => {
+    console.log("load!")
+    const bar = document.querySelector('.navBar')
+    bar.classList.add('showUp')
+});
+
 
 const scrollText= document.getElementById('scrollText');
 
@@ -166,10 +173,9 @@ function toggleDarkMode() {
             element.style.borderColor = 'white';
         })
     }
-    
 }
-
 toggleDarkMode();
+
 
 
 

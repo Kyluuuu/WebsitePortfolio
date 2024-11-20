@@ -71,6 +71,7 @@ body {
   flex-direction: column;
   height: 85vh;
   padding-right: 0;
+  transition: color 1s ease;
 }
 
 .beginTitle h1 {
@@ -85,12 +86,27 @@ body {
   max-width: 40vw;
   font-size: 2vw;
   transition: font-size 1.5s ease;
+  transition: color 1s ease;
+}
+
+.hiddenUp {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(-50%)
+}
+
+.showUp {
+  filter: blur(0);
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 1s ease, opacity 1s ease, filter 1s ease; 
 }
 
 .hidden {
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(-100%)
+  transform: translateX(-100%);
+  transition: color 1s ease;
 }
 
 .show {
@@ -99,6 +115,8 @@ body {
   opacity: 1;
   transition: transform 0.6s ease, opacity 1s ease, filter 1s ease; 
 }
+
+
 
 
 h1 {
@@ -143,12 +161,11 @@ h1 {
   padding-bottom: 10vh;
   display: flex;
   justify-content: center;
-  transition: color 1s ease;
 }
 
 .scrollAnimation {
   animation: moveUpandDown 3s infinite;
-  transition: translate 1s ease;
+  transition: translate 1s ease, color 1s ease;
 }
 
 .scroll.scrollHide {
@@ -233,13 +250,15 @@ h1 {
   justify-content: center;
   gap: 3vw;       
   color: white;
+  transition: color 1s ease;
 }
 
 .allExperienceContainer {
   border-left: 0.3vw solid black;
   padding-top: 0.8vw;
   padding-bottom: 0.8vw;
-  gap: 3vw;  
+  gap: 3vw; 
+  transition: color 1s ease; 
 }
 
 .experienceItem {
@@ -288,6 +307,7 @@ p {
 
 .Technology p {
   font-size: 2.5vw;
+  transition: color 1s ease;
 }
 
 .innerLeftAbout p {
@@ -303,5 +323,9 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Technology {
+  transition: color 1s ease;
 }
 
