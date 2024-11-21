@@ -126,7 +126,7 @@ function toggleDarkMode(lightBool) {
     const title = document.querySelector('.beginTitle h1');
     const technology = document.querySelector('.innerLeftAbout p');
     const beginTitle2 = document.querySelector('.beginTitle h2');
-    const technology2 = document.querySelector('.Technology');
+    const technology2 = document.querySelector('.Technology p');
     const scrollCSS = document.querySelector('.scroll');
     const blackText = document.querySelectorAll('.hidden');
     const blackBarProject = document.querySelectorAll('.allProjectsContainer');
