@@ -3,7 +3,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig(({ mode }) => {
   return {
-    base: mode === 'development' ? '/' : '/website-portfolio/', 
+    base: mode === 'development' ? '/' : '/WebsitePortfolio/', 
     plugins: [
       viteStaticCopy({
         targets: [
