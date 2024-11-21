@@ -18,6 +18,10 @@ body {
   justify-content: center; 
 }
 
+a {
+  cursor: pointer;
+}
+
 .navBar {
   width: 80vw;
   position: fixed;
@@ -122,6 +126,7 @@ body {
 h1 {
   font-size: 5vw;
   padding: 0;
+  padding-bottom: 1.5vh;
 }
 
 .leftTechnology {
@@ -279,8 +284,6 @@ h1 {
 }
 
 .allProjectsContainer p {
-  padding: 0;
-  left: -10px;
 }
 
 .projectByYearContainer {
@@ -296,12 +299,37 @@ h1 {
 }
 
 .aboutMeClass {
+  padding: 0;
   padding-top: 3vw;
 }
 
+.aboutFlex {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.aboutMeClass a {
+  font-size: 1vw;
+  text-decoration: none;
+  padding: 0.5vw;
+  border-radius: 1vh;
+  background-color: #555;
+}
+
+
+
+.aboutMeClass a:hover {
+  padding: 1.3vw;
+  transition: all 0.5s ease;
+}
+
+
 .contactClass {
+  padding: 0;
   padding-top: 3vw;
 }
+
 
 p {
   font-size: 0.8vw;
@@ -326,9 +354,8 @@ ion-icon {
   transition: color 1s ease;
 }
 
-.lightSwitch {
-  display: 'none';
+.filler {
   padding: 0;
-  margin: 0;
+  height: 10vh;
 }
 

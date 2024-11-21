@@ -1,5 +1,6 @@
 import "./indexCSS.css";
 
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -15,7 +16,6 @@ const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el))
 
 window.addEventListener('load', () => {
-    console.log("load!")
     const bar = document.querySelector('.navBar')
     bar.classList.add('showUp')
 });
@@ -35,13 +35,6 @@ window.addEventListener('scroll', () => {
     scrollText.classList.add('scrollHide')
     scrollText.classList.remove('scrollAnimation')
 });
-
-window.history.scrollRestoration = 'manual';
-
-document.addEventListener('DOMContentLoaded', () => {
-    window.scrollTo(0, 0);
-});
-
 
 const experienceButton = document.getElementById('experience');
 
@@ -119,16 +112,17 @@ homeButton.addEventListener('click', (event) => {
 const lightModeButton = document.getElementById('lightModeButton');
 const moonIcon = lightModeButton.querySelector(".moon");
 const sunnyIcon = lightModeButton.querySelector(".sunny");
-let lightModeOn = true;
 
-const lightSwitch = document.querySelector('.lightSwitch');
+lightModeButton.addEventListener('click', () => {
+    let lightBool = !JSON.parse(localStorage.getItem('lightModeOn'))
+    toggleDarkMode(lightBool)
+    localStorage.setItem('lightModeOn', String(lightBool))
+});
 
-lightModeButton.addEventListener('click', toggleDarkMode);
+toggleDarkMode(JSON.parse(localStorage.getItem('lightModeOn')))
 
-function toggleDarkMode() {
-
-    lightModeOn = !lightModeOn;
-
+function toggleDarkMode(lightBool) {
+    console.log(lightBool)
     const title = document.querySelector('.beginTitle h1');
     const technology = document.querySelector('.innerLeftAbout p');
     const beginTitle2 = document.querySelector('.beginTitle h2');
@@ -138,10 +132,7 @@ function toggleDarkMode() {
     const blackBarProject = document.querySelectorAll('.allProjectsContainer');
     const blackBarExperience = document.querySelectorAll('.allExperienceContainer');
 
-    if (lightModeOn) {
-        lightSwitch.classList.add('on')
-        lightSwitch.classList.remove('off')
-
+    if (lightBool) {
         moonIcon.style.display = "none";
         sunnyIcon.style.display = "block";
 
@@ -163,8 +154,6 @@ function toggleDarkMode() {
         })
     }
     else {
-        lightSwitch.classList.add('off')
-        lightSwitch.classList.remove('on')
         sunnyIcon.style.display = "none";
         moonIcon.style.display = "block";
 
@@ -186,7 +175,9 @@ function toggleDarkMode() {
         })
     }
 }
-toggleDarkMode();
+
+
+
 
 
 
