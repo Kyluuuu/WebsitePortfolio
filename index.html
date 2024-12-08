@@ -2,25 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Thomas Mikic Portfolio Website</title>
+
     <link rel="icon" type="image/svg+xml" href="/WebsitePortfolio/assets/Banana-Single-BRzE1tPf.jpg" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thomas Mikic Portfolio Website</title>
+
     <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" crossorigin src="/WebsitePortfolio/assets/main-B9Kv5c1f.js"></script>
-    <link rel="modulepreload" crossorigin href="/WebsitePortfolio/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="stylesheet" crossorigin href="/WebsitePortfolio/assets/indexCSS-Bxin6Cd6.css">
-    <link rel="stylesheet" crossorigin href="/WebsitePortfolio/assets/mainCSS-DaEfdqhL.css">
+    <script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script type="module" crossorigin src="/WebsitePortfolio/assets/main-BSlh2KvS.js"></script>
+    <link rel="modulepreload" crossorigin href="/WebsitePortfolio/assets/mainCSS-Z_oY0_b-.js">
+    <link rel="stylesheet" crossorigin href="/WebsitePortfolio/assets/mainCSS-DcxrN9gR.css">
+    <link rel="stylesheet" crossorigin href="/WebsitePortfolio/assets/main-CnTHtRJL.css">
   </head>
   <body>
+
+    <div class = "fix" id="gradBox">
+      <div class="scrollBoxDivGradientDark"></div>
+      <div class="scrollBoxDivGradientLight"></div>
+      
+      <div id="slowScrollBox">
+        <div class="scrollBoxDivBack"></div>
+        <div class="scrollBoxDivMoonFore"></div>
+        <div class="scrollBoxDivSunFore"></div>
+      </div>
+    </div>
+
     <div class = "centerNav">
         <div class = "navBar hiddenUp">
           <a class="navBarElement leftNav" href="index.html" id="homeButton">TM</a>
           <div class="rightNav">
             <a class="navBarElement" id="home">Home</a>
-            <a class="navBarElement" id="experience">Experience</a>
+            <!-- <a class="navBarElement" id="experience">Experience</a> -->
             <a class="navBarElement" id="projects">Projects</a>
             <a class="navBarElement" id="about">About</a>
             <a class="navBarElement" id="contact">Contact</a>
@@ -55,13 +71,21 @@
 
         <div class="scroll scrollAnimation" id="scrollText"><h2>Scroll down to continue!</h2></div>
 
-        <div class="experience" id="experienceSection">
+      </div>
+    </div>
+      
+    <div class="box">
+      <div class = "centerNav">
+          <div class="notNavBar">
+
+
+        <!-- <div class="experience" id="experienceSection">
           <h1 class="hidden">Experience</h1>
           <p class="hidden">I have experience in creating various software projects, 
             ranging from academic assignments to personal projects. Over the years, 
             I've worked on applications, games, and utility tools that enhance user 
             interaction and problem-solving.</p>
-        </div>
+        </div> -->
 
         <!-- <div class="projectByYearContainer">
           <p class="hidden yearText">2018</p>
@@ -96,12 +120,6 @@
           <p class="hidden yearText">2024</p>
           <div class="allProjectsContainer hidden">
             <div class="projectContainer">
-              <p>Painting Quote Calculator Website</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
-              </a>
-            </div>
-            <div class="projectContainer">
               <p>Godot TickTackToe Game (Playable) </p>
               <a href="websitePages/GodotPage/GodotGame.html">
                 <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
@@ -115,8 +133,8 @@
             </div>
             <div class="projectContainer">
               <p>Java 2D Blackjack</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+              <a href="websitePages/BlackjackPage/blackjack.html">
+                <img src="/WebsitePortfolio/assets/blackjack-Bcv1pqfl.png" alt="Blackjack game">
               </a>
             </div>
             <div class="projectContainer">
@@ -147,18 +165,24 @@
                 <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
               </a>
             </div>
+            <div class="projectContainer">
+              <p>Uni Assignments and Smaller Projects</p>
+              <a href="websitePages/GodotPage/GodotGame.html">
+                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+              </a>
+            </div>
           </div>
 
           <p class="hidden yearText">2022</p>
           <div class="allProjectsContainer hidden">
             <div class="projectContainer">
-              <p>C Console Rock Paper Scissors</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+              <p>Processing Frogger Game</p>
+              <a href="websitePages/FroggerPage/frogger.html">
+                <img src="/WebsitePortfolio/assets/frogger-CtEFC71k.png" alt="Godot TickTackToe">
               </a>
             </div>
             <div class="projectContainer">
-              <p>Processing Frogger Game</p>
+              <p>Uni Assignments and Smaller Projects</p>
               <a href="websitePages/GodotPage/GodotGame.html">
                 <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
               </a>
@@ -169,11 +193,21 @@
           <div class="allProjectsContainer hidden">
             <div class="projectContainer">
               <p>Visual Studio Poker</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+              <a href="websitePages/PokerPage/poker.html">
+                <img src="/WebsitePortfolio/assets/poker-BZzS8U7o.png" alt="Poker">
               </a>
             </div>
           </div>
+        </div>
+
+        <div class="imageTrack hidden">
+          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
+          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
+          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
+          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
+          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
+          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
+          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
         </div>
         
         <div class="aboutMeClass">
@@ -196,6 +230,7 @@
         <div class="filler"></div>
         <div class="filler"></div>
 
+      </div>
 
       </div>
       </div>
