@@ -13,14 +13,14 @@
     <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
-    <script type="module" crossorigin src="/WebsitePortfolio/assets/main-B-dVEx2j.js"></script>
-    <link rel="modulepreload" crossorigin href="/WebsitePortfolio/assets/mainCSS-gWUd1HDx.js">
-    <link rel="stylesheet" crossorigin href="/WebsitePortfolio/assets/mainCSS-D77n_-9O.css">
-    <link rel="stylesheet" crossorigin href="/WebsitePortfolio/assets/main-CnTHtRJL.css">
+    <script type="module" crossorigin src="/WebsitePortfolio/assets/main-CuZ0bIlG.js"></script>
+    <link rel="modulepreload" crossorigin href="/WebsitePortfolio/assets/mainCSS-CCwM_0jv.js">
+    <link rel="stylesheet" crossorigin href="/WebsitePortfolio/assets/mainCSS-BkEuzL3v.css">
+    <link rel="stylesheet" crossorigin href="/WebsitePortfolio/assets/main-wLjunG37.css">
   </head>
   <body>
 
-    <div class = "fix" id="gradBox">
+    <div class="fix" id="gradBox">
       <div class="scrollBoxDivGradientDark"></div>
       <div class="scrollBoxDivGradientLight"></div>
       
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class = "centerNav">
+    <div id="center" class = "centerNav">
         <div class = "navBar hiddenUp">
           <a class="navBarElement leftNav" href="index.html" id="homeButton">TM</a>
           <div class="rightNav">
@@ -65,7 +65,7 @@
           </div>
           <div class ="beginTitle">
             <h1>Hi I'm Thomas Mikic</h1>
-            <h2>I'm an <span class="bold">third year</span> software engineering student at Macquire University</h2>
+            <h2>I'm a <span class="bold">third year</span> software engineering student at Macquire University</h2>
           </div>
         </div>
 
@@ -73,11 +73,57 @@
 
       </div>
     </div>
-      
-    <div class="box">
-      <div class = "centerNav">
-          <div class="notNavBar">
 
+
+    <div class="box">
+      <h1 class="hidden">Projects</h1>
+      <h3 id="dragimage" class="hidden">Drag the images!</h3> 
+      <div class ="mask">
+        <div id="track" data-mousepos="37" data-mouseposlast="37" data-mouseposSave="37" draggable="false">
+          <div class="trackItem" draggable="false">
+            <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" draggable="false"/>
+            <a class="projectButton" href="websitePages/GodotPage/GodotGame.html">Click Here</a>
+          </div>
+          <div class="trackItem" draggable="false">
+            <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" draggable="false"/>
+            <a class="projectButton" href="websitePages/GodotPage/GodotGame.html">Click Here</a>
+          </div>
+          <div class="trackItem" draggable="false">
+            <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" draggable="false"/>
+            <a class="projectButton" href="websitePages/GodotPage/GodotGame.html">Click Here</a>
+          </div>
+          <div class="trackItem" draggable="false">
+            <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" draggable="false"/>
+            <a class="projectButton" href="websitePages/GodotPage/GodotGame.html">Click Here</a>
+          </div>
+          <div class="trackItem" draggable="false">
+            <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" draggable="false"/>
+            <a class="projectButton" href="websitePages/GodotPage/GodotGame.html">Click Here</a>
+          </div>
+          <div class="trackItem" draggable="false">
+            <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" draggable="false"/>
+            <a class="projectButton" href="websitePages/GodotPage/GodotGame.html">Click Here</a>
+          </div>
+          <div class="trackItem" draggable="false">
+            <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" draggable="false"/>
+            <a class="projectButton" href="websitePages/GodotPage/GodotGame.html">Click Here</a>
+          </div>
+        </div>
+      </div>
+
+        <h1 id="aboutSection">About Me</h1>
+        <div class="aboutFlex hidden"> 
+          <a href="/images/Resume.pdf" download="Resume.pdf" class="resumeButton">Resume Download</a>
+
+          <p>I am passionate about building software that solves real-world problems and enhances user experiences. My interests lie in full-stack development, game design, and algorithm optimization.
+
+            Feel free to download my resume to learn more about my background and skills.</p>
+        </div>
+        <h1 id="contactSection">Contact</h1>
+        <p>If you'd like to get in touch, feel free to reach out through the following channels:</p>
+        <p>Email: thomas.mikic123@gmail.com</p>
+    </div>
+      
 
         <!-- <div class="experience" id="experienceSection">
           <h1 class="hidden">Experience</h1>
@@ -112,47 +158,47 @@
           </div>
         </div> -->
 
-        <div class="projects" id="projectSection">
-          <h1 class="hidden">Projects</h1>
-          <p class="hidden">Here are some of the projects I’ve worked on</p>
+        <!-- <div class="projects" id="projectSection"> -->
+          <!-- <h1 class="hidden">Projects</h1>
+          <h3 id="dragimage" class="hidden">Drag the images!</h3> -->
 
-        <div class="projectByYearContainer">
+        <!-- <div class="projectByYearContainer">
           <p class="hidden yearText">2024</p>
           <div class="allProjectsContainer hidden">
             <div class="projectContainer">
               <p>Godot TickTackToe Game (Playable) </p>
               <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
               </a>
             </div>
             <div class="projectContainer">
               <p>Godot 3D Parkour Ball Game (In progress)</p>
               <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
               </a>
             </div>
             <div class="projectContainer">
               <p>Java 2D Blackjack</p>
               <a href="websitePages/BlackjackPage/blackjack.html">
-                <img src="/WebsitePortfolio/assets/blackjack-Bcv1pqfl.png" alt="Blackjack game">
+                <img src="images/blackjack.png" alt="Blackjack game">
               </a>
             </div>
             <div class="projectContainer">
               <p>Three JS</p>
               <a href="websitePages/3dPage/3D.html">
-                <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" alt="3djs">
+                <img src="images/3djsImage.jpg" alt="3djs">
               </a>
             </div>
             <div class="projectContainer">
               <p>Java MCP (Metro System)</p>
               <a href="websitePages/MCPPage/MCP.html">
-                <img src="/WebsitePortfolio/assets/mcpImage-CDfLaqVS.jpg" alt="MCP">
+                <img src="images/mcpImage.jpg" alt="MCP">
               </a>
             </div>
             <div class="projectContainer">
               <p>Uni Assignments and Smaller Projects</p>
               <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
               </a>
             </div>
           </div>
@@ -162,13 +208,13 @@
             <div class="projectContainer">
               <p>C Marble Machine</p>
               <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
               </a>
             </div>
             <div class="projectContainer">
               <p>Uni Assignments and Smaller Projects</p>
               <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
               </a>
             </div>
           </div>
@@ -178,13 +224,13 @@
             <div class="projectContainer">
               <p>Processing Frogger Game</p>
               <a href="websitePages/FroggerPage/frogger.html">
-                <img src="/WebsitePortfolio/assets/frogger-CtEFC71k.png" alt="Godot TickTackToe">
+                <img src="images/frogger.png" alt="Godot TickTackToe">
               </a>
             </div>
             <div class="projectContainer">
               <p>Uni Assignments and Smaller Projects</p>
               <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="/WebsitePortfolio/assets/godotImage-D2Y4dNh4.jpg" alt="Godot TickTackToe">
+                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
               </a>
             </div>
           </div>
@@ -194,52 +240,11 @@
             <div class="projectContainer">
               <p>Visual Studio Poker</p>
               <a href="websitePages/PokerPage/poker.html">
-                <img src="/WebsitePortfolio/assets/poker-BZzS8U7o.png" alt="Poker">
+                <img src="images/poker.png" alt="Poker">
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="imageTrack hidden">
-          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
-          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
-          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
-          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
-          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
-          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
-          <img class="trackItem" src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg"/>
-        </div>
-        
-        <div class="aboutMeClass">
-          <h1 class="hidden" id="aboutSection">About Me</h1>
-          <div class="aboutFlex hidden">
-            <a href="/images/Resume.pdf" download="Resume.pdf" class="resumeButton">Resume Download</a>
-
-            <p class="hidden">I am passionate about building software that solves real-world problems and enhances user experiences. My interests lie in full-stack development, game design, and algorithm optimization.
-
-              Feel free to download my resume to learn more about my background and skills.</p>
-          </div>
-        </div>
-
-        <div class="contactClass">
-          <h1 class="hidden" id="contactSection">Contact</h1>
-          <p class="hidden">If you'd like to get in touch, feel free to reach out through the following channels:</p>
-          <p class="hidden">Email: thomas.mikic123@gmail.com</p>
-        </div>
-
-        <div class="filler"></div>
-        <div class="filler"></div>
-
-      </div>
-
-      </div>
-      </div>
-      </div>
-
-      <div></div>
-
-      <footer>
-        Thomas Mikic 2024
-      </footer>
   </body>
 </html>
