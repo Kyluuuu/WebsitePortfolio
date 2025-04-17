@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-		<title>$GODOT_PROJECT_NAME</title>
+		<title>TickTackToe</title>
 		<style>
 html, body, #canvas {
 	margin: 0;
@@ -76,7 +76,9 @@ body {
 	z-index: 1;
 }
 		</style>
-		$GODOT_HEAD_INCLUDE
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="TickTackToe.icon.png" />
+<link rel="apple-touch-icon" href="TickTackToe.apple-touch-icon.png"/>
+
 	</head>
 	<body>
 		<canvas id="canvas">
@@ -88,15 +90,15 @@ body {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" src="$GODOT_SPLASH" alt="">
+			<img id="status-splash" src="TickTackToe.png" alt="">
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
 
-		<script src="$GODOT_URL"></script>
+		<script src="TickTackToe.js"></script>
 		<script>
-const GODOT_CONFIG = $GODOT_CONFIG;
-const GODOT_THREADS_ENABLED = $GODOT_THREADS_ENABLED;
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"TickTackToe","experimentalVK":false,"fileSizes":{"TickTackToe.pck":1583376,"TickTackToe.wasm":43016933},"focusCanvas":true,"gdextensionLibs":[]};
+const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
 (function () {
@@ -194,3 +196,4 @@ const engine = new Engine(GODOT_CONFIG);
 		</script>
 	</body>
 </html>
+
