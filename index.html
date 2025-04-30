@@ -2,22 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="images/Banana-Single.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Thomas Mikic Portfolio Website</title>
+
+    <link rel="icon" type="image/svg+xml" href="/WebsitePortfolio/assets/icon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thomas Mikic Portfolio Website</title>
-    <script defer type="module" src="websitePages/indexPage/indexJS.js"></script>
+
     <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script defer type="module" src="websitePages/indexPage/indexJS.js"></script>
   </head>
   <body>
+
+    <div class = "fix" id="gradBox">
+      <div class="scrollBoxDivGradientDark"></div>
+      <div class="scrollBoxDivGradientLight"></div>
+      
+      <div id="slowScrollBox">
+        <div class="scrollBoxDivBack"></div>
+        <div class="scrollBoxDivMoonFore"></div>
+        <div class="scrollBoxDivSunFore"></div>
+      </div>
+    </div>
+
     <div class = "centerNav">
         <div class = "navBar hiddenUp">
           <a class="navBarElement leftNav" href="index.html" id="homeButton">TM</a>
           <div class="rightNav">
             <a class="navBarElement" id="home">Home</a>
-            <a class="navBarElement" id="experience">Experience</a>
+            <!-- <a class="navBarElement" id="experience">Experience</a> -->
             <a class="navBarElement" id="projects">Projects</a>
             <a class="navBarElement" id="about">About</a>
             <a class="navBarElement" id="contact">Contact</a>
@@ -46,44 +62,18 @@
           </div>
           <div class ="beginTitle">
             <h1>Hi I'm Thomas Mikic</h1>
-            <h2>I'm an <span class="bold">third year</span> software engineering student at Macquire University</h2>
+            <h2>I'm a <span class="bold">fourth year</span> software engineering student at Macquire University</h2>
           </div>
         </div>
 
         <div class="scroll scrollAnimation" id="scrollText"><h2>Scroll down to continue!</h2></div>
 
-        <div class="experience" id="experienceSection">
-          <h1 class="hidden">Experience</h1>
-          <p class="hidden">I have experience in creating various software projects, 
-            ranging from academic assignments to personal projects. Over the years, 
-            I've worked on applications, games, and utility tools that enhance user 
-            interaction and problem-solving.</p>
-        </div>
-
-        <!-- <div class="projectByYearContainer">
-          <p class="hidden yearText">2018</p>
-          <div class="allExperienceContainer hidden">
-            <div class="experienceItem">
-              <li>First item</li>
-              <div>Lorem Ipsum is simply dummy text of the printing and types
-                etting industry. Lorem Ipsum has been the industry's standard dummy te
-                xt ever since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book. It has survived not only five cen
-                  turies, but also the leap into electronic typesetting, remaining essentially un
-                  changed. It was popularised in the 1960s with the release of Letraset sheets cont
-                  aining Lorem Ipsum passages, and more recently with desktop publishing software like 
-                  Aldus PageMaker including versions of Lorem Ipsum.</div>
-            </div>
-            <div class="experienceItem">
-              <li>First itemasdasdad</li>
-              <div>heaodasdasdapelkjrfwoerkjwefhwkhfwhef</div>
-            </div>
-            <div class="experienceItem">
-              <li>First item</li>
-              <div>heaodasdasdapelkjrfwoerkjwefhwkhfwhef</div>
-            </div>
-          </div>
-        </div> -->
+      </div>
+    </div>
+      
+    <div class="box">
+      <div class = "centerNav">
+          <div class="notNavBar">
 
         <div class="projects" id="projectSection">
           <h1 class="hidden">Projects</h1>
@@ -93,12 +83,6 @@
           <p class="hidden yearText">2024</p>
           <div class="allProjectsContainer hidden">
             <div class="projectContainer">
-              <p>Painting Quote Calculator Website</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
-              </a>
-            </div>
-            <div class="projectContainer">
               <p>Godot TickTackToe Game (Playable) </p>
               <a href="websitePages/GodotPage/GodotGame.html">
                 <img src="images/godotImage.jpg" alt="Godot TickTackToe">
@@ -106,33 +90,33 @@
             </div>
             <div class="projectContainer">
               <p>Godot 3D Parkour Ball Game (In progress)</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
-              </a>
+              <!-- <a href="websitePages/GodotPage/GodotGame.html"> -->
+                <img src="images/underconstruction.jpg" alt="Godot TickTackToe">
+              <!-- </a> -->
             </div>
             <div class="projectContainer">
               <p>Java 2D Blackjack</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
+              <a href="websitePages/BlackjackPage/blackjack.html">
+                <img src="/WebsitePortfolio/assets/blackjack-Bcv1pqfl.png" alt="Blackjack game">
               </a>
             </div>
             <div class="projectContainer">
               <p>Three JS</p>
               <a href="websitePages/3dPage/3D.html">
-                <img src="images/3djsImage.jpg" alt="3djs">
+                <img src="/WebsitePortfolio/assets/3djsImage-DI4i2Uj7.jpg" alt="3djs">
               </a>
             </div>
             <div class="projectContainer">
               <p>Java MCP (Metro System)</p>
               <a href="websitePages/MCPPage/MCP.html">
-                <img src="images/mcpImage.jpg" alt="MCP">
+                <img src="/WebsitePortfolio/assets/mcpImage-CDfLaqVS.jpg" alt="MCP">
               </a>
             </div>
             <div class="projectContainer">
               <p>Uni Assignments and Smaller Projects</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
-              </a>
+              <!-- <a href="websitePages/GodotPage/GodotGame.html"> -->
+                <img src="/WebsitePortfolio/assets/underconstruction.jpg" alt="Godot TickTackToe">
+              <!-- </a> -->
             </div>
           </div>
 
@@ -140,25 +124,31 @@
           <div class="allProjectsContainer hidden">
             <div class="projectContainer">
               <p>C Marble Machine</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
-              </a>
+              <!-- <a href="websitePages/GodotPage/GodotGame.html"> -->
+                <img src="/WebsitePortfolio/assets/underconstruction.jpg" alt="Godot TickTackToe">
+              <!-- </a> -->
+            </div>
+            <div class="projectContainer">
+              <p>Uni Assignments and Smaller Projects</p>
+              <!-- <a href="websitePages/GodotPage/GodotGame.html"> -->
+                <img src="/WebsitePortfolio/assets/underconstruction.jpg" alt="Godot TickTackToe">
+              <!-- </a> -->
             </div>
           </div>
 
           <p class="hidden yearText">2022</p>
           <div class="allProjectsContainer hidden">
             <div class="projectContainer">
-              <p>C Console Rock Paper Scissors</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
+              <p>Processing Frogger Game</p>
+              <a href="websitePages/FroggerPage/frogger.html">
+                <img src="/WebsitePortfolio/assets/frogger-CtEFC71k.png" alt="Godot TickTackToe">
               </a>
             </div>
             <div class="projectContainer">
-              <p>Processing Frogger Game</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
-              </a>
+              <p>Uni Assignments and Smaller Projects</p>
+              <!-- <a href="websitePages/GodotPage/GodotGame.html"> -->
+                <img src="/WebsitePortfolio/assets/underconstruction.jpg" alt="Godot TickTackToe">
+              <!-- </a> -->
             </div>
           </div>
         
@@ -166,21 +156,22 @@
           <div class="allProjectsContainer hidden">
             <div class="projectContainer">
               <p>Visual Studio Poker</p>
-              <a href="websitePages/GodotPage/GodotGame.html">
-                <img src="images/godotImage.jpg" alt="Godot TickTackToe">
+              <a href="websitePages/PokerPage/poker.html">
+                <img src="/WebsitePortfolio/assets/poker-BZzS8U7o.png" alt="Poker">
               </a>
             </div>
           </div>
         </div>
-        
+
         <div class="aboutMeClass">
           <h1 class="hidden" id="aboutSection">About Me</h1>
-          <div class="aboutFlex">
-            <a href="/images/Resume.pdf" download="Resume.pdf" class="download-btn hidden">Resume Download</a>
+          <div class="aboutFlex hidden">
 
-            <p class="hidden">I am passionate about building software that solves real-world problems and enhances user experiences. My interests lie in full-stack development, game design, and algorithm optimization.
+            <p class="hidden">Hi, I’m Thomas, a passionate software engineer with a deep love for technology and gaming. I’ve been immersed in the world of coding and software development for years, constantly learning and growing through both academic and personal projects. I believe that technology should be used to create meaningful experiences—whether that’s building software that solves real-world problems or designing interactive games that bring people together.
 
-              Feel free to download my resume to learn more about my background and skills.</p>
+              Currently, I’m finishing my software engineering degree and exploring the world of game development, AI, and other innovative technologies. I’ve had the privilege of working on a variety of projects, from game engines and system architecture to machine learning applications. Alongside coding, I love gaming, with titles like League of Legends, Overwatch, and Escape from Tarkov keeping me hooked. These experiences fuel my creativity and passion for designing experiences that resonate with users.
+              
+              When I’m not coding or gaming, you can find me exploring the latest in tech news, watching shows like Arcane, or connecting with friends online. I’m always looking for new challenges and opportunities to grow, and I’m excited about the potential to bring my skills to the tech industry. </p>
           </div>
         </div>
 
@@ -193,6 +184,7 @@
         <div class="filler"></div>
         <div class="filler"></div>
 
+      </div>
 
       </div>
       </div>
