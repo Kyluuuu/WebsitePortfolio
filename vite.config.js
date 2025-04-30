@@ -20,7 +20,6 @@ export default defineConfig(({ mode }) => {
           main: 'index.html',
           threed: 'websitePages/3dPage/3D.html',
           godotGame: 'websitePages/GodotPage/GodotGame.html',
-          MCP: 'websitePages/MCPPage/MCP.html',
         },
       },
     },
