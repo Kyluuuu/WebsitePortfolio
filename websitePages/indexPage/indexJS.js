@@ -76,7 +76,6 @@ lightModeButton.addEventListener("click", () => {
 applyTheme(JSON.parse(localStorage.getItem("lightModeOn")));
 
 function applyTheme(isLight) {
-  console.log(isLight);
 
   const h1 = document.querySelector(".beginTitle h1");
   const aboutText = document.querySelector(".innerLeftAbout p");

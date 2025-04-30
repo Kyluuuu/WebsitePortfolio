@@ -240,7 +240,7 @@ ion-icon {
 .scrollBoxDivMoonFore {
   height: 100vh;
   width: 100vw;
-  background-image: url(images/moondark.png);
+  background-image: url(../../images/moondark.png);
   background-attachment: fixed;
   background-position-y: 45vh;
   background-position-x: 30vw;
@@ -259,7 +259,7 @@ ion-icon {
 .scrollBoxDivSunFore {
   height: 100vh;
   width: 100vw;
-  background-image: url(images/moonlight.jpg);
+  background-image: url(../../images/moonlight.jpg);
   background-attachment: fixed;
   background-position-y: 43.5vh;
   background-position-x: 29.3vw;
@@ -292,7 +292,7 @@ ion-icon {
 .scrollBoxDivGradientDark {
   height: 100vh;
   width: 100vw;
-  background-image: url(images/stars.jpg);
+  background-image: url(../../images/stars.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
