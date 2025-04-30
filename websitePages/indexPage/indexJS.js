@@ -1,186 +1,150 @@
 import "./indexCSS.css";
+import "../main.css";
 
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-        else {
-            entry.target.classList.remove('show')
-        }
-    });
+// IntersectionObserver for hidden elements
+const S = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
 });
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el))
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => S.observe(el));
 
-window.addEventListener('load', () => {
-    const bar = document.querySelector('.navBar')
-    bar.classList.add('showUp')
+// Show navbar on load
+window.addEventListener("load", () => {
+  document.querySelector(".navBar").classList.add("showUp");
 });
 
-
-const scrollText= document.getElementById('scrollText');
-
-window.addEventListener('wheel', (event) => {
-    const delta = event.deltaY;
-      if (delta > 0) {
-        scrollText.classList.add('scrollHide')
-        scrollText.classList.remove('scrollAnimation')
-      }
+// ScrollText hide animation
+const scrollText = document.getElementById("scrollText");
+window.addEventListener("wheel", (e) => {
+  if (e.deltaY > 0) {
+    scrollText.classList.add("scrollHide");
+    scrollText.classList.remove("scrollAnimation");
+  }
 });
 
-window.addEventListener('scroll', () => {
-    scrollText.classList.add('scrollHide')
-    scrollText.classList.remove('scrollAnimation')
+// Slow scroll effect
+let slowScrollBox = document.getElementById("slowScrollBox");
+window.addEventListener("scroll", () => {
+  let scrollY = window.scrollY;
+  slowScrollBox.style.transform = `translateY(${-scrollY * 0.3}px)`;
+  scrollText.classList.add("scrollHide");
+  scrollText.classList.remove("scrollAnimation");
 });
 
-const experienceButton = document.getElementById('experience');
+// Navigation button scrolls
+const scrollToSection = (buttonId, sectionId) => {
+  const button = document.getElementById(buttonId);
+  button.addEventListener("click", () => {
+    const targetTop = document.getElementById(sectionId).getBoundingClientRect().top + window.scrollY;
+    const offset = document.querySelector(".navBar").offsetHeight * 1.2;
+    window.scrollTo({ top: targetTop - offset, behavior: "smooth" });
+  });
+};
 
-experienceButton.addEventListener('click', () => {
-    const section = document.getElementById('experienceSection');
-    const offsetTop = section.getBoundingClientRect().top + window.scrollY;
-    const navbarHeight = document.querySelector('.navBar').offsetHeight;
-    const scalingOffset = navbarHeight * 1.2;
-    window.scrollTo({
-        top: offsetTop - scalingOffset,
-        behavior: 'smooth',
-    });
+scrollToSection("projects", "projectSection");
+scrollToSection("about", "aboutSection");
+scrollToSection("contact", "contactSection");
+
+const homeButton = document.getElementById("home");
+homeButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setTimeout(() => {
+    scrollText.classList.remove("scrollHide");
+    scrollText.classList.add("scrollAnimation");
+  }, 1000);
 });
 
-const projectsButton = document.getElementById('projects');
-
-projectsButton.addEventListener('click', () => {
-    const section = document.getElementById('projectSection');
-    const offsetTop = section.getBoundingClientRect().top + window.scrollY;
-    const navbarHeight = document.querySelector('.navBar').offsetHeight;
-    const scalingOffset = navbarHeight * 1.2;
-
-    window.scrollTo({
-        top: offsetTop - scalingOffset,
-        behavior: 'smooth',
-    });
-    
-});
-
-const aboutButton = document.getElementById('about');
-
-aboutButton.addEventListener('click', () => {
-    const section = document.getElementById('aboutSection');
-    const offsetTop = section.getBoundingClientRect().top + window.scrollY;
-    const navbarHeight = document.querySelector('.navBar').offsetHeight;
-    const scalingOffset = navbarHeight * 1.2;
-
-    window.scrollTo({
-        top: offsetTop - scalingOffset,
-        behavior: 'smooth',
-    });
-    
-});
-
-const contactButton = document.getElementById('contact');
-
-contactButton.addEventListener('click', () => {
-    const section = document.getElementById('contactSection');
-    const offsetTop = section.getBoundingClientRect().top + window.scrollY;
-    const navbarHeight = document.querySelector('.navBar').offsetHeight;
-    const scalingOffset = navbarHeight * 1.2;
-
-    window.scrollTo({
-        top: offsetTop - scalingOffset,
-        behavior: 'smooth',
-    });
-    
-});
-
-const homeButton = document.getElementById('home');
-
-homeButton.addEventListener('click', (event) => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
-
-    const scrollAnimationDuration = 1000;
-    setTimeout(() => {
-        scrollText.classList.remove('scrollHide')
-        scrollText.classList.add('scrollAnimation');
-    }, scrollAnimationDuration);
-});
-
-const lightModeButton = document.getElementById('lightModeButton');
+// Light/Dark mode toggle
+const lightModeButton = document.getElementById("lightModeButton");
 const moonIcon = lightModeButton.querySelector(".moon");
-const sunnyIcon = lightModeButton.querySelector(".sunny");
+const sunIcon = lightModeButton.querySelector(".sunny");
 
-lightModeButton.addEventListener('click', () => {
-    let lightBool = !JSON.parse(localStorage.getItem('lightModeOn'))
-    toggleDarkMode(lightBool)
-    localStorage.setItem('lightModeOn', String(lightBool))
+lightModeButton.addEventListener("click", () => {
+  const isLight = !JSON.parse(localStorage.getItem("lightModeOn"));
+  applyTheme(isLight);
+  localStorage.setItem("lightModeOn", String(isLight));
 });
 
-toggleDarkMode(JSON.parse(localStorage.getItem('lightModeOn')))
+// Apply theme from localStorage on load
+applyTheme(JSON.parse(localStorage.getItem("lightModeOn")));
 
-function toggleDarkMode(lightBool) {
-    console.log(lightBool)
-    const title = document.querySelector('.beginTitle h1');
-    const technology = document.querySelector('.innerLeftAbout p');
-    const beginTitle2 = document.querySelector('.beginTitle h2');
-    const technology2 = document.querySelector('.Technology p');
-    const scrollCSS = document.querySelector('.scroll');
-    const blackText = document.querySelectorAll('.hidden');
-    const blackBarProject = document.querySelectorAll('.allProjectsContainer');
-    const blackBarExperience = document.querySelectorAll('.allExperienceContainer');
+function applyTheme(isLight) {
+  console.log(isLight);
 
-    if (lightBool) {
-        moonIcon.style.display = "none";
-        sunnyIcon.style.display = "block";
+  const h1 = document.querySelector(".beginTitle h1");
+  const aboutText = document.querySelector(".innerLeftAbout p");
+  const h2 = document.querySelector(".beginTitle h2");
+  const techText = document.querySelector(".Technology p");
+  const scrollHint = document.querySelector(".scroll");
+  const hiddenEls = document.querySelectorAll(".hidden");
+  const allProjects = document.querySelectorAll(".allProjectsContainer");
+  const allExperience = document.querySelectorAll(".allExperienceContainer");
+  const box = document.querySelector(".box");
+  const sunFore = document.querySelector(".scrollBoxDivSunFore");
+  const moonFore = document.querySelector(".scrollBoxDivMoonFore");
+  const gradientDark = document.querySelector(".scrollBoxDivGradientDark");
+  const gradientLight = document.querySelector(".scrollBoxDivGradientLight");
 
-        document.body.style.backgroundColor = 'white';
-        title.style.color = 'black'; 
-        technology.style.color = 'black';
-        beginTitle2.style.color = '#555';
-        technology2.style.color = '#555';
-        scrollCSS.style.color = 'black'; 
-        blackText.forEach(element => {
-            element.style.color = 'black';
-            element.style.borderColor = 'black';
-        })
-        blackBarProject.forEach(element => {
-            element.style.color = 'white';
-        })
-        blackBarExperience.forEach(element => {
-            element.style.color = 'black';
-        })
-    }
-    else {
-        sunnyIcon.style.display = "none";
-        moonIcon.style.display = "block";
+  if (isLight) {
+    moonIcon.style.display = "none";
+    sunIcon.style.display = "block";
+    document.body.style.backgroundColor = "white";
+    h1.style.color = "black";
+    aboutText.style.color = "black";
+    h2.style.color = "#666";
+    techText.style.color = "#666";
+    scrollHint.style.color = "black";
+    sunFore.style.opacity = 1;
+    moonFore.style.opacity = 0;
+    gradientLight.style.opacity = 1;
+    gradientDark.style.opacity = 0;
+    box.style.backgroundColor = "white";
 
-        document.body.style.backgroundColor = '#333';
-        title.style.color = 'white'; 
-        technology.style.color = 'white'
-        beginTitle2.style.color = '#999';
-        technology2.style.color = '#999';
-        scrollCSS.style.color = 'white'; 
-        blackText.forEach(element => {
-            element.style.color = 'white';
-            element.style.borderColor = 'white';
-        })
-        blackBarProject.forEach(element => {
-            element.style.color = 'white';
-        })
-        blackBarExperience.forEach(element => {
-            element.style.color = 'white';
-        })
-    }
+    hiddenEls.forEach((el) => {
+      el.style.color = "black";
+      el.style.borderColor = "black";
+    });
+
+    allProjects.forEach((el) => {
+      el.style.color = "white";
+    });
+
+    allExperience.forEach((el) => {
+      el.style.color = "black";
+    });
+  } else {
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "block";
+    document.body.style.backgroundColor = "#333";
+    h1.style.color = "white";
+    aboutText.style.color = "white";
+    h2.style.color = "#999";
+    techText.style.color = "#999";
+    scrollHint.style.color = "white";
+    sunFore.style.opacity = 0;
+    moonFore.style.opacity = 1;
+    gradientLight.style.opacity = 0;
+    gradientDark.style.opacity = 1;
+    box.style.backgroundColor = "#333";
+
+    hiddenEls.forEach((el) => {
+      el.style.color = "white";
+      el.style.borderColor = "white";
+    });
+
+    allProjects.forEach((el) => {
+      el.style.color = "white";
+    });
+
+    allExperience.forEach((el) => {
+      el.style.color = "white";
+    });
+  }
 }
-
-
-
-
-
-
-
-
-

@@ -1,76 +1,5 @@
-
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  padding: 0.5vw;
-}
-
-body {
-  background-color: #333;
-  transition: background-color 1s ease;
-}
-
-.centerNav {
-  display: flex;
-  justify-content: center; 
-}
-
-a {
-  cursor: pointer;
-}
-
-.navBar {
-  width: 80vw;
-  position: fixed;
-  top: 1vh; 
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  background-color:#555; 
-  z-index: 100;
-  border-radius: 1vh;
-}
-
-.rightNav {
-  display: flex;
-  justify-content: flex-end; 
-  gap: 1vw;
-  font-size: 0.8vw;
-  background-color:#555;
-  padding: 0;
-  margin-right: 0.4vw;
-}
-
-.leftNav {
-  font-size: 2vw;
-}
-
-.navBarElement {
-  text-decoration: none;
-  color: #fff;
-  transition: font-size 1s ease;
-  flex-grow: 0;
-  background-color:#555;
-}
-
-.navBarElement:hover {
-  background-color: #333;
-  border-radius: 0.8vw;
-  transition: all 0.5s;
-  padding: 1vw;
-}
-
-.notNavBar {
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-}
-
 .beginTitle {
-  display: flex;  
+  display: flex;
   text-align: right;
   justify-content: center;
   flex-direction: column;
@@ -84,6 +13,7 @@ a {
   margin-left: auto;
   max-width: 50vw;
   transition: color 1s ease;
+  flex-wrap: wrap;
 }
 
 .beginTitle h2 {
@@ -91,37 +21,8 @@ a {
   max-width: 40vw;
   font-size: 2vw;
   transition: font-size 1.5s ease, color 1s ease;
+  flex-wrap: wrap;
 }
-
-.hiddenUp {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateY(-50%)
-}
-
-.showUp {
-  filter: blur(0);
-  transform: translateY(0);
-  opacity: 1;
-  transition: transform 1s ease, opacity 1s ease, filter 1s ease; 
-}
-
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 1s ease;
-}
-
-.show {
-  filter: blur(0);
-  transform: translateX(0);
-  opacity: 1;
-  transition: transform 0.6s ease, opacity 1s ease, filter 1s ease, color 1s ease; 
-}
-
-
-
 
 h1 {
   font-size: 5vw;
@@ -149,9 +50,8 @@ h1 {
   transition: color 1s ease;
 }
 
-
 .bold {
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -160,7 +60,6 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-
 
 .scroll {
   padding-bottom: 10vh;
@@ -182,7 +81,6 @@ h1 {
     transform: translateY(10vh);
     opacity: 0;
   }
-
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -191,9 +89,8 @@ h1 {
 
 .experience {
   padding-left: 0;
-  transition: color 1s ease; 
+  transition: color 1s ease;
 }
-
 
 .projects {
   padding-left: 0;
@@ -206,24 +103,25 @@ h1 {
 
 .socialLinks a {
   border-radius: 1vh;
-  background-color:#555;
-  color: white;
+  background-color: #666;
+  color: #fff;
   text-decoration: none;
+  transition: padding 0.5s ease, background-color 0.5s ease;
 }
 
 .socialLinks a:hover {
-  padding: 1.5vw;
-  background-color:#555; 
-  transition: padding 1s ease;
+  padding: 1vw;
+  background-color: #333;
   border-radius: 1vh;
 }
 
 .projectContainer {
   padding: 0;
-  background-color: #555;
+  background-color: #666;
   border-radius: 1vh;
   width: max-content;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .projectContainer a {
@@ -240,32 +138,31 @@ h1 {
 }
 
 .projectContainer:hover {
-  background-color: white;
+  background-color: #fff;
   border: 0.2vw solid black;
-  color: black;
+  color: #000;
   border-radius: 0;
   transition: all 0.3s ease;
 }
 
 .allProjectsContainer {
-  border-left: 0.3vw solid black;
   padding-top: 3vw;
   padding-bottom: 3vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 3vw;       
-  color: white;
+  justify-content: space-between;
+  gap: 3vw;
+  color: #fff;
   transition: all 1s ease, color 1s ease;
 }
+
 
 .allExperienceContainer {
   border-left: 0.3vw solid black;
   padding-top: 0.8vw;
   padding-bottom: 0.8vw;
-  gap: 3vw; 
+  gap: 3vw;
   transition: all 1s ease, color 1s ease;
-
 }
 
 .experienceItem {
@@ -273,66 +170,44 @@ h1 {
   justify-content: space-between;
 }
 
-.experienceItem li {
-  width: max-content;
-  font-size: 0.9vw;
-}
-
 .experienceItem div {
   width: 60vw;
   font-size: 0.7vw;
 }
 
-.allProjectsContainer p {
-}
-
 .projectByYearContainer {
   padding-top: 3vw;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 4vw;
 }
 
-.yearText{
+.yearText {
   padding: 0;
   font-size: 1.4vw;
 }
 
 .aboutMeClass {
-  padding: 0;
+  padding-left: 0;
   padding-top: 3vw;
 }
 
-.aboutFlex {
-  display: flex;
-  flex-direction: column;
-}
-
-
 .aboutMeClass a {
+  padding-left: 0;
   font-size: 1vw;
   text-decoration: none;
-  padding: 0.5vw;
   border-radius: 1vh;
   background-color: #555;
-}
-
-
-
-.aboutMeClass a:hover {
-  padding: 1.3vw;
   transition: all 0.5s ease;
 }
-
 
 .contactClass {
   padding: 0;
   padding-top: 3vw;
 }
 
-
 p {
-  font-size: 0.8vw;
+  font-size: 1vw;
 }
 
 .Technology p {
@@ -348,7 +223,6 @@ ion-icon {
   padding: 0;
 }
 
-
 .Technology {
   transition: color 1s ease;
 }
@@ -358,3 +232,104 @@ ion-icon {
   height: 10vh;
 }
 
+.resumeButton {
+  color: #fff;
+  text-decoration: none;
+}
+
+.scrollBoxDivMoonFore {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(images/moondark.png);
+  background-attachment: fixed;
+  background-position-y: 45vh;
+  background-position-x: 30vw;
+  background-size: 17vw;
+  background-repeat: no-repeat;
+  position: fixed;
+  padding: 0;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  transform-origin: center;
+  transition: opacity 1s ease;
+}
+
+.scrollBoxDivSunFore {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(images/moonlight.jpg);
+  background-attachment: fixed;
+  background-position-y: 43.5vh;
+  background-position-x: 29.3vw;
+  background-size: 18.5vw;
+  background-repeat: no-repeat;
+  position: fixed;
+  padding: 0;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.scrollBoxDivGradientLight {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#000, #dbdbdb 45%);
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.scrollBoxDivGradientDark {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(images/stars.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease;
+  z-index: -1;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+}
+
+.fix {
+  z-index: -1;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+}
+
+.box {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  border-radius: 2vh;
+  transition: all 1s ease;
+}
+
+.imageTrack {
+  display: flex;
+  justify-content: center;
+}
+
+.trackItem {
+  width: 40vmin;
+  height: 20vmin;
+}

@@ -1,4 +1,5 @@
 import "./3D.css"
+import "../main.css"
 
 import * as THREE from 'three'
 

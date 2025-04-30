@@ -1,101 +1,58 @@
-import "./godotGamecss.css"
+import "./godotGamecss.css";
+import "../main.css";
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-        else {
-            entry.target.classList.remove('show')
-        }
-    });
-});
-
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el))
-
-window.addEventListener('load', () => {
-    const bar = document.querySelector('.navBar')
-    bar.classList.add('showUp')
-});
-
-const overviewButton = document.getElementById('overview');
-
-overviewButton.addEventListener('click', () => {
-    const section = document.getElementById('overviewSection');
-    const offsetTop = section.getBoundingClientRect().top + window.scrollY;
-    const navbarHeight = document.querySelector('.navBar').offsetHeight;
-    const scalingOffset = navbarHeight * 1.2;
-    window.scrollTo({
-        top: offsetTop - scalingOffset,
-        behavior: 'smooth',
-    });
-});
-
-const developmentButton = document.getElementById('development');
-
-developmentButton.addEventListener('click', () => {
-    const section = document.getElementById('developmentSection');
-    const offsetTop = section.getBoundingClientRect().top + window.scrollY;
-    const navbarHeight = document.querySelector('.navBar').offsetHeight;
-    const scalingOffset = navbarHeight * 1.2;
-
-    window.scrollTo({
-        top: offsetTop - scalingOffset,
-        behavior: 'smooth',
-    });
-    
-});
-
-const gameButton = document.getElementById('game');
-
-gameButton.addEventListener('click', (event) => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
-});
-
-const lightModeButton = document.getElementById('lightModeButton');
-const moonIcon = lightModeButton.querySelector(".moon");
-const sunnyIcon = lightModeButton.querySelector(".sunny");
-
-lightModeButton.addEventListener('click', () => {
-    let lightBool = !JSON.parse(localStorage.getItem('lightModeOn'))
-    toggleDarkMode(lightBool)
-    localStorage.setItem('lightModeOn', String(lightBool))
-});
-
-toggleDarkMode(JSON.parse(localStorage.getItem('lightModeOn')))
-
-function toggleDarkMode(lightBool) {
-    console.log(lightBool)
-    const blackText = document.querySelectorAll('.hidden');
-
-    if (lightBool) {
-        moonIcon.style.display = "none";
-        sunnyIcon.style.display = "block";
-
-        document.body.style.backgroundColor = 'white';
-        blackText.forEach(element => {
-            element.style.color = 'black';
-        })
+// Intersection Observer to show elements when they come into view
+const r = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
     }
-    else {
-        sunnyIcon.style.display = "none";
-        moonIcon.style.display = "block";
+  });
+});
 
-        document.body.style.backgroundColor = '#333';
-        blackText.forEach(element => {
-            element.style.color = 'white';
-        })
-    }
+// Observe all elements with the class 'hidden'
+const i = document.querySelectorAll(".hidden");
+i.forEach(el => r.observe(el));
+
+// Show navbar on load
+window.addEventListener("load", () => {
+  document.querySelector(".navBar").classList.add("showUp");
+});
+
+
+// Light mode toggle
+const c = document.getElementById("lightModeButton"),
+      s = c.querySelector(".moon"),
+      l = c.querySelector(".sunny");
+
+c.addEventListener("click", () => {
+  let lightModeOn = !JSON.parse(localStorage.getItem("lightModeOn"));
+  d(lightModeOn);
+  localStorage.setItem("lightModeOn", String(lightModeOn));
+});
+
+// Light/dark mode styling logic
+d(JSON.parse(localStorage.getItem("lightModeOn")));
+
+function d(lightModeOn) {
+  console.log(lightModeOn);
+  const hiddenElements = document.querySelectorAll(".hidden");
+
+  if (lightModeOn) {
+    s.style.display = "none";
+    l.style.display = "block";
+    document.body.style.backgroundColor = "white";
+    hiddenElements.forEach(el => {
+      el.style.color = "black";
+    });
+  } else {
+    l.style.display = "none";
+    s.style.display = "block";
+    document.body.style.backgroundColor = "#333";
+    hiddenElements.forEach(el => {
+      el.style.color = "white";
+    });
+  }
 }
-
-
-
-
-
-
-
-
