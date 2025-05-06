@@ -16,8 +16,11 @@ h1 {
   height: 10vh;
 }
 
-.noPadDiv {
+
+
+canvas {
   padding: 0;
+  padding-right: 1vw;
 }
 
 p {

@@ -116,16 +116,28 @@ h1 {
 }
 
 .projectContainer {
+  border: 0.2vw solid transparent;
   padding: 0;
   background-color: #666;
   border-radius: 1vh;
-  width: max-content;
   text-align: center;
   transition: all 0.3s ease;
+  box-sizing: border-box;    
 }
 
 .projectContainer a {
-  padding: 0;
+  padding: 0.5vw;
+}
+
+.projectContainer div {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+  padding-bottom: 1.5vh;
+}
+
+.projectContainer div p {
+  background-color: #888;
 }
 
 .projectContainer p {
@@ -139,7 +151,7 @@ h1 {
 
 .projectContainer:hover {
   background-color: #fff;
-  border: 0.2vw solid black;
+  border-color: black;
   color: #000;
   border-radius: 0;
   transition: all 0.3s ease;
@@ -156,36 +168,6 @@ h1 {
   transition: all 1s ease, color 1s ease;
 }
 
-
-.allExperienceContainer {
-  border-left: 0.3vw solid black;
-  padding-top: 0.8vw;
-  padding-bottom: 0.8vw;
-  gap: 3vw;
-  transition: all 1s ease, color 1s ease;
-}
-
-.experienceItem {
-  display: flex;
-  justify-content: space-between;
-}
-
-.experienceItem div {
-  width: 60vw;
-  font-size: 0.7vw;
-}
-
-.projectByYearContainer {
-  padding-top: 3vw;
-  display: flex;
-  flex-direction: column;
-  gap: 4vw;
-}
-
-.yearText {
-  padding: 0;
-  font-size: 1.4vw;
-}
 
 .aboutMeClass {
   padding-left: 0;
@@ -232,10 +214,6 @@ ion-icon {
   height: 10vh;
 }
 
-.resumeButton {
-  color: #fff;
-  text-decoration: none;
-}
 
 .scrollBoxDivMoonFore {
   height: 100vh;
